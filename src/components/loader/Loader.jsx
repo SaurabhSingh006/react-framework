@@ -1,16 +1,16 @@
 import React from 'react'
 import './loader.css';
 
-function renderLoader({ type }) {
+function renderLoader({ type, color }) {
     let loader;
     switch(type) {
         case 'normal':
             loader = (
                 <div className="lds-ring">
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
+                    <div style={{ borderColor: `${color} transparent transparent transparent` }}></div>
+                    <div style={{ borderColor: `${color} transparent transparent transparent` }}></div>
+                    <div style={{ borderColor: `${color} transparent transparent transparent` }}></div>
+                    <div style={{ borderColor: `${color} transparent transparent transparent` }}></div>
                 </div>
             );
             break;
@@ -33,10 +33,10 @@ function renderLoader({ type }) {
     return loader;
 }
 
-function Loader({ type = "normal", backgroundColor = "white", display = '', size = 100 }) {
+function Loader({ type = "normal", backgroundColor = "white", size = 100, color = 'black' }) {
   return (
-    <div className={`container ${display}`} style={{ backgroundColor: `${backgroundColor}`, width: `${size}px`, height: `${size}px` }}>
-        { renderLoader({ type }) }
+    <div className={`container`} style={{ backgroundColor: `${backgroundColor}`, width: `${size}px`, height: `${size}px` }}>
+        { renderLoader({ type, color }) }
     </div> 
   )
 }
