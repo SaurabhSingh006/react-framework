@@ -8,10 +8,13 @@ function GlobalProvider({ children }) {
 
   // LAYOUT STATE
   const [sidebarStatus, setSidebarStatus] = useState(true);
-  const [hamburgerVisibleStatus, setHamburgerVisibleStatus] = useState(false);
+  const [hamburgerVisibleStatus, setHamburgerVisibleStatus] = useState(true);
   
   // For Getting the screen size
   useEffect(() => {
+    console.log(window.outerWidth);
+    if(window.outerWidth > 600) setHamburgerVisibleStatus(false);
+    else setSidebarStatus(false);
     const listener = (e) => {
       setTimeout(() => {
         console.log(e.target.outerWidth);

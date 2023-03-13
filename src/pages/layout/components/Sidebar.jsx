@@ -28,20 +28,21 @@ function renderSideMenuList() {
   });
 }
 
-function Sidebar({ sidebarWidth = '200px', sidebarColor = 'white' }) {
+function Sidebar({ sidebarWidth = '200px', sidebarColor = 'white', navHeight = 'auto' }) {
   console.log("Sidenav renderev");
   const { sidebarStatus } = useGlobalContext();
 
   if(!sidebarStatus) sidebarWidth = '0px';
 
   return (
-    <div style={{ width: `${sidebarWidth}`, backgroundColor: `${sidebarColor}`, boxShadow: 'rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px' }} className={`h-screen bg-black overflow-y-auto transition-all ease-in-out delay-150 duration-150`}>
+    <div style={{ width: `${sidebarWidth}`, backgroundColor: `${sidebarColor}`, boxShadow: 'rgba(0, 0, 0, 0.25) 0px 14px 20px, rgba(0, 0, 0, 0.22) 0px 10px 10px' }} className={`z-40 h-screen bg-black overflow-y-auto transition-all ease-in-out delay-150 duration-150`}>
       <div>
-        <h1 className="text-2xl text-center p-3">Logo</h1>
+        <h1 style={{ minHeight: `${navHeight}` }} className="text-2xl text-center p-3">Logo</h1>
         { sidebarStatus }
         <div>
           {renderSideMenuList()}
         </div>
+        <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fzeevector.com%2Fcolorful-background-hd%2F&psig=AOvVaw0VYh5jpGeOV4wE-4RErh3q&ust=1678806875709000&source=images&cd=vfe&ved=0CA8QjRxqFwoTCLimzZKZ2f0CFQAAAAAdAAAAABAE" alt="" srcset="" />
       </div> 
     </div>
   )

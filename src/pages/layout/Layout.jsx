@@ -3,7 +3,7 @@ import Navbar from './components/Navbar'
 import Sidebar from './components/Sidebar'
 
 const layoutConfig = {
-  sidebarWidth: '240px',
+  sidebarWidth: '260px',
   // sidebarColor: 'pink',
   navHeight: '3rem'
 }
