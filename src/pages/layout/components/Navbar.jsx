@@ -21,7 +21,7 @@ function Navbar({ navHeight = 'auto' }) {
           <button onClick={handleHamMenu}> 
             <img src={HamIcon} alt='hamburger icon' />
           </button>
-          <div onClick={handleMainScreen} className='w-screen h-screen blur-sm bg-black absolute z-39 top-0'></div>
+          <div onClick={handleMainScreen} className='w-screen h-screen opacity-80 bg-gray-900 absolute z-39 top-0 left-0 blur-2xl'></div>
         </>
       )
     } else if(hamburgerVisibleStatus) {
@@ -31,7 +31,7 @@ function Navbar({ navHeight = 'auto' }) {
 
   console.log("Nav renderred");
   return (
-    <div style={{ height: `${navHeight}`, boxShadow: 'rgba(0, 0, 0, 0.24) 0px 3px 8px' }} className='overflow-hidden'>
+    <div style={{ height: `${navHeight}`, boxShadow: 'rgba(0, 0, 0, 0.24) 0px 3px 8px' }} className='p-2 overflow-hidden'>
       {displayHamAndOverlay()}  
     </div>
   )
