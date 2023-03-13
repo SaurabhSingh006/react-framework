@@ -26,7 +26,7 @@ function GlobalProvider({ children }) {
     }
 
     window.addEventListener('resize', listener);
-  }, [sidebarStatus]);
+  }, []);
 
   const valueToProvide = {
     userInfo,

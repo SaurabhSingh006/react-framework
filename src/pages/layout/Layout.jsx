@@ -14,6 +14,8 @@ function Layout() {
       <Sidebar {...layoutConfig}/>
       <div className='w-screen relative'>
         <Navbar {...layoutConfig} />
+
+        <img className='bg-red-600' src="https://img.freepik.com/free-vector/hand-drawn-flat-groovy-psychedelic-background_23-2149074391.jpg" alt="" />
       </div>
     </div>
   )

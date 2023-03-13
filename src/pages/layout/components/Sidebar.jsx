@@ -42,7 +42,6 @@ function Sidebar({ sidebarWidth = '200px', sidebarColor = 'white', navHeight = '
         <div>
           {renderSideMenuList()}
         </div>
-        <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fzeevector.com%2Fcolorful-background-hd%2F&psig=AOvVaw0VYh5jpGeOV4wE-4RErh3q&ust=1678806875709000&source=images&cd=vfe&ved=0CA8QjRxqFwoTCLimzZKZ2f0CFQAAAAAdAAAAABAE" alt="" srcset="" />
       </div> 
     </div>
   )
