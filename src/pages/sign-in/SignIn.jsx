@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import useGlobalContext from '../../hooks/useGlobalContex';
 import './../../index.css';
 
@@ -19,8 +20,13 @@ function SignIn() {
         </div>
       </div>
 
-      <div className='text-textcolor md:w-1/2'>
-        <h1>fghdfhjdff { userInfo.name }</h1>
+      <div className='grid place-content-center text-textcolor md:w-1/2'>
+        <div>
+          <h1 className='text-textcolor text-2xl'>Login form here</h1>
+            <Link to='/home'>
+              <button className='bg-green-900 p-2 text-white border-3 border-black border-solid rounded-xl'>Login</button>
+            </Link>
+        </div>
       </div>
     </div>
   )
