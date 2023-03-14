@@ -37,10 +37,8 @@ function Sidebar({ sidebarWidth = '500px', msidebarWidth = '260px', sidebarColor
   if(!sidebarStatus) hideSidebar = true;
   const sidebarClasses = classnames(
     'z-40 h-screen overflow-y-auto transition-all ease-in-out delay-150 duration-150 overflow-x-hidden',
-    { 'md:w-[260px]': !hideSidebar},
-    { 'w-[500px]': !hideSidebar},
-    { 'md:w-[0px]': hideSidebar},
-    { 'w-[0px]': hideSidebar},
+    { 'md:w-[260px] w-[700px]': !hideSidebar},
+    { 'md:w-[0px] w-[0px]': hideSidebar}
   );
 
  console.log(sidebarClasses);
