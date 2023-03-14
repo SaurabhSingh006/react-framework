@@ -36,7 +36,7 @@ function Sidebar({ sidebarWidth = '500px', msidebarWidth = '260px', sidebarColor
     sidebarWidth = '0';
     msidebarWidth = '0';
   }
-  const sidebarClasses = `z-40 h-screen overflow-y-auto transition-all ease-in-out delay-150 duration-150 w-[${sidebarWidth}] md:w-[${msidebarWidth}]overflow-x-hidden`;
+  const sidebarClasses = `z-40 h-screen overflow-y-auto transition-all ease-in-out delay-150 duration-150 w-[${sidebarWidth}] md:w-[${msidebarWidth}] overflow-x-hidden`;
  console.log(sidebarClasses);
   return (
     <div style={{ backgroundColor: `${sidebarColor}`, boxShadow: 'rgba(0, 0, 0, 0.25) 0px 14px 20px, rgba(0, 0, 0, 0.22) 0px 10px 10px' }} className={sidebarClasses}>
