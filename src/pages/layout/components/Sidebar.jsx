@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 import useGlobalContext from '../../../hooks/useGlobalContex';
+import classnames from 'classnames';
 
 const sideLinks = [
   {
@@ -32,11 +33,16 @@ function Sidebar({ sidebarWidth = '500px', msidebarWidth = '260px', sidebarColor
   console.log("Sidenav renderev");
   const { sidebarStatus } = useGlobalContext();
 
-  if(!sidebarStatus) {
-    sidebarWidth = '0';
-    msidebarWidth = '0';
-  }
-  const sidebarClasses = `z-40 h-screen overflow-y-auto transition-all ease-in-out delay-150 duration-150 w-[${sidebarWidth}] md:w-[${msidebarWidth}] overflow-x-hidden`;
+  let hideSidebar = false;
+  if(!sidebarStatus) hideSidebar = true;
+  const sidebarClasses = classnames(
+    'z-40 h-screen overflow-y-auto transition-all ease-in-out delay-150 duration-150 overflow-x-hidden',
+    { 'md:w-[260px]': !hideSidebar},
+    { 'w-[500px]': !hideSidebar},
+    { 'md:w-[0px]': hideSidebar},
+    { 'w-[0px]': hideSidebar},
+  );
+
  console.log(sidebarClasses);
   return (
     <div style={{ backgroundColor: `${sidebarColor}`, boxShadow: 'rgba(0, 0, 0, 0.25) 0px 14px 20px, rgba(0, 0, 0, 0.22) 0px 10px 10px' }} className={sidebarClasses}>
