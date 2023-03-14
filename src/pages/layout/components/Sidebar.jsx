@@ -4,8 +4,8 @@ import useGlobalContext from '../../../hooks/useGlobalContex';
 
 const sideLinks = [
   {
-    title: 'Page2',
-    route: '/page2'
+    title: 'Dashboard',
+    route: '/dashboard'
   },
   {
     title: 'Page3',
@@ -24,18 +24,22 @@ const sideLinks = [
 
 function renderSideMenuList() {
   return sideLinks.map((link, i) => {
-    return <Link key={i} className='block'>{link.title}</Link>
+    return <Link to={link.route} key={i} className='block'>{link.title}</Link>
   });
 }
 
-function Sidebar({ sidebarWidth = '200px', sidebarColor = 'white', navHeight = 'auto' }) {
+function Sidebar({ sidebarWidth = '500px', msidebarWidth = '260px', sidebarColor = 'white', navHeight = 'auto' }) {
   console.log("Sidenav renderev");
   const { sidebarStatus } = useGlobalContext();
 
-  if(!sidebarStatus) sidebarWidth = '0px';
-
+  if(!sidebarStatus) {
+    sidebarWidth = '0px';
+    msidebarWidth = '0px';
+  }
+  const sidebarClasses = `z-40 h-screen overflow-y-auto transition-all ease-in-out delay-150 duration-150 w-[${sidebarWidth}] md:w-[${msidebarWidth}] overflow-x-hidden`;
+ console.log(sidebarClasses);
   return (
-    <div style={{ width: `${sidebarWidth}`, backgroundColor: `${sidebarColor}`, boxShadow: 'rgba(0, 0, 0, 0.25) 0px 14px 20px, rgba(0, 0, 0, 0.22) 0px 10px 10px' }} className={`z-40 h-screen bg-black overflow-y-auto transition-all ease-in-out delay-150 duration-150`}>
+    <div style={{ backgroundColor: `${sidebarColor}`, boxShadow: 'rgba(0, 0, 0, 0.25) 0px 14px 20px, rgba(0, 0, 0, 0.22) 0px 10px 10px' }} className={sidebarClasses}>
       <div>
         <h1 style={{ minHeight: `${navHeight}` }} className="text-2xl text-center p-3">Logo</h1>
         { sidebarStatus }

@@ -21,7 +21,7 @@ function Navbar({ navHeight = 'auto' }) {
           <button onClick={handleHamMenu}> 
             <img src={HamIcon} alt='hamburger icon' />
           </button>
-          <div style={{ backdropFilter: 'saturate(180%) blur(10px)', webkitBackdropFilter: 'blur(10px)' }} onClick={handleMainScreen} className='w-screen h-screen opacity-80 bg-gray-900 absolute z-39 top-0 left-0'></div>
+          <div style={{ backdropFilter: 'saturate(180%) blur(10px)' }} onClick={handleMainScreen} className='w-screen h-screen opacity-80 bg-gray-900 absolute z-39 top-0 left-0'></div>
         </>
       )
     } else if(hamburgerVisibleStatus) {

@@ -8,6 +8,7 @@ import { GlobalProvider } from './context/GlobalContext';
 
 const LazySignIn = React.lazy(() => import('./pages/sign-in/SignIn'));
 const LazyLayout = React.lazy(() => import(`./pages/layout/Layout`));
+const LazyDashboard = React.lazy(() => import(`./pages/dashboard/Dashboard`));
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -35,6 +36,15 @@ root.render(
             </React.Suspense>
           }></Route>
 
+          <Route path='/dashboard' element={
+            <React.Suspense fallback={
+                <div className='grid place-content-center w-screen h-screen' style={{ backgroundColor: '#0000ff' }}>
+                <div><Loader backgroundColor='#0000ff' color='white' /></div>
+                </div>
+            } >
+              <LazyDashboard />
+            </React.Suspense>
+          }></Route>
           <Route path='*' element={ <Page404 /> } />
         </Routes>
       </BrowserRouter>
