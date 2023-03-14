@@ -33,8 +33,8 @@ function Sidebar({ sidebarWidth = '500px', msidebarWidth = '260px', sidebarColor
   const { sidebarStatus } = useGlobalContext();
 
   if(!sidebarStatus) {
-    sidebarWidth = '0px';
-    msidebarWidth = '0px';
+    sidebarWidth = '0';
+    msidebarWidth = '0';
   }
   const sidebarClasses = `z-40 h-screen overflow-y-auto transition-all ease-in-out delay-150 duration-150 w-[${sidebarWidth}] md:w-[${msidebarWidth}] overflow-x-hidden`;
  console.log(sidebarClasses);
