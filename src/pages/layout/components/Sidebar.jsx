@@ -5,7 +5,7 @@ import useGlobalContext from '../../../hooks/useGlobalContex';
 const sideLinks = [
   {
     title: 'Dashboard',
-    route: '/dashboard'
+    route: '/home'
   },
   {
     title: 'Page3',
