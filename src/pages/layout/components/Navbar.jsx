@@ -14,6 +14,7 @@ function Navbar({ navHeight = 'auto' }) {
     setSidebarStatus(false);
   }
   function displayHamAndOverlay() {
+    console.log(hamburgerVisibleStatus, sidebarStatus);
     if(hamburgerVisibleStatus && sidebarStatus) {
       return (
         <>

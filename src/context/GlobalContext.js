@@ -12,17 +12,20 @@ function GlobalProvider({ children }) {
   
   // For Getting the screen size
   useEffect(() => {
-    console.log(window.outerWidth);
     if(window.outerWidth > 600) setHamburgerVisibleStatus(false);
     else setSidebarStatus(false);
+
     const listener = (e) => {
       setTimeout(() => {
         console.log(e.target.outerWidth);
         if(e.target.outerWidth > 600) {
           setHamburgerVisibleStatus(false);
           setSidebarStatus(true);
-        } else setHamburgerVisibleStatus(true); 
-      }, 300);
+        } else {
+          setHamburgerVisibleStatus(true); 
+          setSidebarStatus(false);
+        } 
+      }, 400);
     }
 
     window.addEventListener('resize', listener);
