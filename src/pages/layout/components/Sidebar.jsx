@@ -1,7 +1,8 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import useGlobalContext from '../../../hooks/useGlobalContex';
 import classnames from 'classnames';
+import Button from '../../../components/button/Button';
 
 const sideLinks = [
   {
@@ -10,6 +11,7 @@ const sideLinks = [
   },
   {
     title: 'Page3',
+    route: '/home/page3',
     children: [
       {
         title: 'Option 1',
@@ -25,7 +27,7 @@ const sideLinks = [
 
 function renderSideMenuList() {
   return sideLinks.map((link, i) => {
-    return <Link to={link.route} key={i} className='block'>{link.title}</Link>
+    return <NavLink to={link.route} key={i} className='block'>{link.title}</NavLink>
   });
 }
 
@@ -50,9 +52,14 @@ function Sidebar({ sidebarWidth = '500px', msidebarWidth = '260px', sidebarColor
         <div>
           {renderSideMenuList()}
         </div>
+
+        <Button classes='text-black bg-pink-500' />
       </div> 
     </div>
   )
 }
 
 export default Sidebar;
+
+
+

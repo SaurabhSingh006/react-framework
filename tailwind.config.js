@@ -7,7 +7,9 @@ module.exports = {
     extend: {
       colors: {
         'primaryblue': '#0000ff',
-        'textcolor': '#1e293b'
+        'textcolor': '#1e293b',
+        'lightblue': '#9fc5e8',
+        'lightpink': '#d87e7e',
       }
     },
   },
