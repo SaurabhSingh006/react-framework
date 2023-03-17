@@ -11,7 +11,6 @@ function Button({ classes = '' }) {
     return (
         <button className={className} >
             Button 
-            <div class="lds-roller"><div></div><div></div><div></div><div></div> </div>
         </button>
     )
 }

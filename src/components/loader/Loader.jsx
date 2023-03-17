@@ -17,8 +17,8 @@ function Loader({ type = "normal", backgroundColor = "black", size = '30px', col
     switch(type) {
         case 'normal':
             loader = (
-                <div style={{ width: `${size}`, height: `${size}` }} className={`lds-ring bg-${backgroundColor}`} >
-                    <div style={{ borderColor: `${color} transparent transparent transparent`, borderWidth: `${loaderWeight}`,  }}></div>
+                <div style={{ width: `${size}`, height: `${size}`, backgroundColor: `${backgroundColor}` }} className='lds-ring' >
+                    <div style={{ borderColor: `${color} transparent transparent transparent`, borderWidth: `${loaderWeight}` }}></div>
                     <div style={{ borderColor: `${color} transparent transparent transparent`, borderWidth: `${loaderWeight}` }}></div>
                     <div style={{ borderColor: `${color} transparent transparent transparent`, borderWidth: `${loaderWeight}` }}></div>
                     <div style={{ borderColor: `${color} transparent transparent transparent`, borderWidth: `${loaderWeight}` }}></div>
@@ -28,34 +28,34 @@ function Loader({ type = "normal", backgroundColor = "black", size = '30px', col
 
         case "dotted":
             loader = (
-                <div class="dot-spinner">
-                    <div class="dot-spinner__dot"></div>
-                    <div class="dot-spinner__dot"></div>
-                    <div class="dot-spinner__dot"></div>
-                    <div class="dot-spinner__dot"></div>
-                    <div class="dot-spinner__dot"></div>
-                    <div class="dot-spinner__dot"></div>
-                    <div class="dot-spinner__dot"></div>
-                    <div class="dot-spinner__dot"></div>
+                <div style={{ width: `${size}`, height: `${size}`, backgroundColor: `${backgroundColor}` }} className='dot-spinner' >
+                    <div className={`dot-spinner__dot`}></div>
+                    <div className={`dot-spinner__dot`}></div>
+                    <div className={`dot-spinner__dot`}></div>
+                    <div className={`dot-spinner__dot`}></div>
+                    <div className={`dot-spinner__dot`}></div>
+                    <div className={`dot-spinner__dot`}></div>
+                    <div className={`dot-spinner__dot`}></div>
+                    <div className={`dot-spinner__dot`}></div>
                 </div>
             );
             break;
         
         case "bar":
             loader = (
-                <div class="loader">
-                    <div class="bar1"></div>
-                    <div class="bar2"></div>
-                    <div class="bar3"></div>
-                    <div class="bar4"></div>
-                    <div class="bar5"></div>
-                    <div class="bar6"></div>
-                    <div class="bar7"></div>
-                    <div class="bar8"></div>
-                    <div class="bar9"></div>
-                    <div class="bar10"></div>
-                    <div class="bar11"></div>
-                    <div class="bar12"></div>
+                <div  style={{ maxWidth: `${size}`, height: `${size}`, backgroundColor: `${backgroundColor}` }} className="loader">
+                    <div style={{ backgroundColor: `${color}` }} className="bar1"></div>
+                    <div style={{ backgroundColor: `${color}` }} className="bar2"></div>
+                    <div style={{ backgroundColor: `${color}` }} className="bar3"></div>
+                    <div style={{ backgroundColor: `${color}` }} className="bar4"></div>
+                    <div style={{ backgroundColor: `${color}` }} className="bar5"></div>
+                    <div style={{ backgroundColor: `${color}` }} className="bar6"></div>
+                    <div style={{ backgroundColor: `${color}` }} className="bar7"></div>
+                    <div style={{ backgroundColor: `${color}` }} className="bar8"></div>
+                    <div style={{ backgroundColor: `${color}` }} className="bar9"></div>
+                    <div style={{ backgroundColor: `${color}` }} className="bar10"></div>
+                    <div style={{ backgroundColor: `${color}` }} className="bar11"></div> 
+                    <div style={{ backgroundColor: `${color}` }} className="bar12"></div>
                 </div>
             );
             break;

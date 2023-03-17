@@ -45,8 +45,6 @@ animation-delay: -0.15s;
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  height: var(--uib-size);
-  width: var(--uib-size);
 }
 
 .dot-spinner__dot {
@@ -144,16 +142,16 @@ animation-delay: -0.15s;
 /* BAR */
 
 .loader {
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  border-radius: 10px;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: inline-block;
 }
 
 .loader div {
   width: 8%;
   height: 24%;
-  background: rgb(198, 17, 17);
+  /* background: rgb(198, 17, 17); */
   position: absolute;
   left: 50%;
   top: 30%;

@@ -12,9 +12,9 @@ const layoutConfig = {
 
 function Layout() {
   return (
-    <div className='flex h-screen w-screen overflow-hidden'>
+    <div className='flex flex-row h-screen w-screen overflow-hidden'>
       <Sidebar {...layoutConfig}/>
-      <div className='w-screen relative'>
+      <div className='w-screen relative overflow-x-scroll'>
         <Navbar {...layoutConfig} />
         
         <Outlet />

@@ -10,6 +10,9 @@ module.exports = {
         'textcolor': '#1e293b',
         'lightblue': '#9fc5e8',
         'lightpink': '#d87e7e',
+      },
+      width: {
+        '80': '8rem'
       }
     },
   },

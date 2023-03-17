@@ -25,7 +25,7 @@ function GlobalProvider({ children }) {
           setHamburgerVisibleStatus(true); 
           setSidebarStatus(false);
         } 
-      }, 400);
+      }, 300);
     }
 
     window.addEventListener('resize', listener);

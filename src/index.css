@@ -19,10 +19,11 @@ body {
 /* Works on Chrome, Edge, and Safari */
 *::-webkit-scrollbar {
     width: 5px;
+    height: 5px;
 }
 
 *::-webkit-scrollbar-track {
-    background: rgba(0, 0, 0, 0.441);
+    background: rgba(0, 0, 0, 0.038);
 }
 
 *::-webkit-scrollbar-thumb {
