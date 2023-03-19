@@ -1,14 +1,39 @@
 import React from 'react'
-import Loader from '../../components/loader/Loader'
+import CustomForm from '../../components/form/CustomForm'
+import CustomInput from '../../components/form/CustomInput'
 
 function Dashboard() {
+  // const handleSubmit = (e) => {
+  //   console.log(e);
+  //   e.preventDefault();
+  //   console.log(e.target.checkValidity(), e)
+  //   console.log(Object.fromEntries(new FormData(e.target)));
+  // }
+
+  // const handleInput = (e) => {
+  //   e.preventDefault();
+  //   console.log(e.target.validationMessage);
+  // }
+
+  // const handleChageForm = (e) => {
+  //   console.log(e.target.form)
+  //   console.log(Object.fromEntries(new FormData(e.target.form)));
+  // }
+
   return (
-    <div className='border-red-900 border-8 overflow-x-scroll'>
-      {/* <Loader type='dotted' backgroundColor='pink' color='black' size="100px" loaderWeight="5px" /> */}
-      <Loader type='bar' backgroundColor='black' color='yellow' size='30px' />gfjhdh
-      <div className='max-w-screen white-space-pre-wrap'>hjgkedywedkhjewrgteeer wrjherhfyvuvfiuerrf jubyglerfkhekfr</div>
+    <div className='w-1/2'>
+      <CustomForm>
+        <CustomInput name='fullname' label='Name' required />
+        <CustomInput name='fullname' label='Last' required />
+      </CustomForm>
+      {/* <form onSubmit={handleSubmit} onChange={handleChageForm} >
+        <label htmlFor="name">Nameteg</label>
+        <input minLength='10' name='name' onChange={handleInput} id='name' type="text" className='bg-blue-200 invalid:border-red-500' required title='Field is required' />
+
+        <input type='submit' value='Submit' />
+      </form> */}
     </div>
   )
 }
 
-export default Dashboard
+export default Dashboard 
