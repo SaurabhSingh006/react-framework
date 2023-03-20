@@ -1,10 +1,11 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import useGlobalContext from '../../hooks/useGlobalContex';
 import './../../index.css';
 import CustomInput from './../../components/form/CustomInput';
 import Button from '../../components/button/Button';
 
 function SignIn() {
+  const [loginBtnLoad, setLoginBtnLoad] = useState(false);
   const { userInfo } = useGlobalContext();
   console.log(userInfo);
 
@@ -14,6 +15,7 @@ function SignIn() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setLoginBtnLoad(true);
     console.log(Object.fromEntries(new FormData(e.target)));
   }
 
@@ -34,7 +36,7 @@ function SignIn() {
             <CustomInput id='password' label='Password' type='password' required minLength='8' />
 
             <br />
-            <Button title='Login' classes='bg-primaryblue text-white px-4 py-2' align='center' />
+            <Button title='Login' classes='bg-primaryblue text-white px-4 py-2' align='center' loading={loginBtnLoad} />
           </form>
         </div>
         
