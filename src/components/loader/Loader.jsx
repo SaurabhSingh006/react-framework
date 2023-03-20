@@ -12,7 +12,7 @@
 import React from 'react'
 import './loader.css';
 
-function Loader({ type = "normal", backgroundColor = "black", size = '30px', color = 'black', loaderWeight = '2px' }) {
+function Loader({ type = "normal", backgroundColor = "black", size = '30px', color = 'white', loaderWeight = '2px' }) {
     let loader;
     switch(type) {
         case 'normal':

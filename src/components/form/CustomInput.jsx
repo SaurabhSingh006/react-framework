@@ -10,13 +10,15 @@ function CustomInput({
   }) {
 
   const [value, setValue] = useState('');
-  const [error, setError] = useState();
+  const [error, setError] = useState('');
   
   const handleInput = (e) => {
+    e.preventDefault();
     setValue(e.target.value);
     setError(e.target.validationMessage);
   }
   const handleFocusOut = (e) => {
+    e.preventDefault();
     setError(e.target.validationMessage);
   }
 

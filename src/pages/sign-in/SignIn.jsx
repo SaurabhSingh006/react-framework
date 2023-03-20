@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import useGlobalContext from '../../hooks/useGlobalContex';
 import './../../index.css';
 import CustomInput from './../../components/form/CustomInput';
+import Button from '../../components/button/Button';
 
 function SignIn() {
   const { userInfo } = useGlobalContext();
@@ -9,22 +10,31 @@ function SignIn() {
 
   useEffect(() => {
     console.log("render", userInfo);
-  })
+  });
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(Object.fromEntries(new FormData(e.target)));
+  }
 
   return (
     <div className='flex flex-wrap h-screen text-white'>
-      <div className='w-screen md:w-1/2 sm:w-1/2 bg-primaryblue grid place-content-center'>
+      <div className=' w-screen md:w-1/2 bg-primaryblue grid place-content-center'>
         <div className='p-5 text-center md:w-3/5 m-auto'>
           <h1 className='text-3xl md:text-4xl md:font-bold py-2'>Welcome to our community</h1>
           <p className='text-slate-100'>Discover sustainable sportswear, athleisure and casualwear clothing for your active lifestyle. Jaspur connects you with the clothing you desire based on your values, while facilitating purchasing options that are most convenient for you.</p>
         </div>
       </div>
 
-      <div className='grid place-content-center text-textcolor m-auto md:w-1/2'>
+      <div className='grid place-content-center text-textcolor m-auto md:w-1/2 py-6'>
         <div className='w-72 md:w-96 m-auto'> 
-          <form>
+          <h3 className='text-center text-4xl font-bold mb-5'>Sign In</h3>
+          <form onSubmit={handleSubmit}>
             <CustomInput id='username' label='Email' type='email' required minLength='6' />
             <CustomInput id='password' label='Password' type='password' required minLength='8' />
+
+            <br />
+            <Button title='Login' classes='bg-primaryblue text-white px-4 py-2' align='center' />
           </form>
         </div>
         
