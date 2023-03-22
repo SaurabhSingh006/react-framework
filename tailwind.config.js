@@ -13,6 +13,21 @@ module.exports = {
       },
       width: {
         '80': '8rem'
+      },
+      animation: {
+        'fade-out': 'fade .5s ease-in-out '
+      },
+      keyframes: {
+        fade: {
+          'from': {
+            transform: 'scale(0)',
+            opacity: 0
+          },
+          'to': {
+            transform: 'scale(1)',
+            opacity: 1
+          }
+        }
       }
     },
   },

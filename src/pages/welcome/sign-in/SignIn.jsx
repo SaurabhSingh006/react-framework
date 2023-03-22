@@ -29,7 +29,7 @@ function SignIn() {
   }
 
   return (
-    <>
+    <div className='animate-fade-out'>
       <h3 className='text-4xl font-bold m-2'>Sign In</h3>
       <p className='m-2 mb-4 text-sm'>
         Don't have an account? &nbsp;
@@ -43,7 +43,7 @@ function SignIn() {
         <br />
         <Button title='Login' classes='bg-primaryblue text-white px-4 py-2' align='center' loading={loginBtnLoad} />
       </form>
-    </>
+    </div>
   )
 }
 
