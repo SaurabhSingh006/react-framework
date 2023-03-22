@@ -10,7 +10,11 @@ import Dashboard from './pages/dashboard/Dashboard';
 import { Provider } from 'react-redux';
 import store from './store';
 
-const LazySignIn = React.lazy(() => import('./pages/sign-in/SignIn'));
+// Components
+import SignIn from './pages/welcome/sign-in/SignIn';
+import SignUp from './pages/welcome/sign-up/SignUp';
+
+const LazyWelcome = React.lazy(() => import('./pages/welcome/Welcome'));
 const LazyLayout = React.lazy(() => import(`./pages/layout/Layout`));
 
 console.log(store);
@@ -29,9 +33,13 @@ root.render(
                 <div><Loader backgroundColor='#0000ff' color='white' /></div>
               </div>
               }>
-                <LazySignIn />
+                <LazyWelcome />
               </React.Suspense>
-            }></Route>
+            }>
+              <Route path='/' element={<SignIn />} ></Route>
+              <Route path='/sign-in' element={<SignIn />} ></Route>
+              <Route path='/sign-up' element={<SignUp />} ></Route>
+            </Route>
 
             <Route path='/home' element={
               <React.Suspense fallback={
