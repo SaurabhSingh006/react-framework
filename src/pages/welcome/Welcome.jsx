@@ -10,7 +10,7 @@ function Welcome() {
         console.log("Welcom")
         setTimeout(() => {
             formRef.current.scrollIntoView();
-        }, 1000);
+        }, 2000);
     });
 
     return (
@@ -21,7 +21,7 @@ function Welcome() {
             <p className='text-slate-100'>Discover sustainable sportswear, athleisure and casualwear clothing for your active lifestyle. Jaspur connects you with the clothing you desire based on your values, while facilitating purchasing options that are most convenient for you.</p>
           </div>
 
-          <div className='animte-ping block w-screen md:w-auto absolute bottom-5 left-2/4 md:hidden'>
+          <div className='animte-ping block md:w-auto absolute bottom-5 left-2/4 md:hidden'>
             <MdDoubleArrow style={{ transformOrigin: 'center', transform: 'translateX(-50%) rotateZ(-90deg)', fontSize: '40px' }} />
           </div>
         </div>
