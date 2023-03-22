@@ -3,19 +3,25 @@ import useGlobalContext from '../../hooks/useGlobalContex';
 import './../../index.css';
 import CustomInput from './../../components/form/CustomInput';
 import Button from '../../components/button/Button';
+import { useNavigate } from "react-router-dom"
 
 function SignIn() {
   const [loginBtnLoad, setLoginBtnLoad] = useState(false);
   const { userInfo } = useGlobalContext();
+  const navigate = useNavigate();
   console.log(userInfo);
 
   useEffect(() => {
-    console.log("render", userInfo);
+    console.log("render", userInfo,"ENVi", process.env.PROJECT_ENVIRONMENT);
   });
 
   const handleSubmit = (e) => {
-    e.preventDefault();
+    e.preventDefault(); 
     setLoginBtnLoad(true);
+    setTimeout(() => {
+      setLoginBtnLoad(false); 
+      navigate("/home");
+    }, 2000);
     console.log(Object.fromEntries(new FormData(e.target)));
   }
 

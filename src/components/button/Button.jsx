@@ -3,10 +3,10 @@ import React from 'react';
 import Loader from './../loader/Loader';
 
 function Button({ classes = '', title = 'Add title', align = 'right', loading = false }) {
-    const className = classNames(
+    const btnClassName = classNames(
         'px-2 py-1 rounded-xl m-w-fit',
         classes,
-        { 'disabled:opacity-40': loading },
+        { 'disabled:opacity-40 cursor-progress': loading },
     );
 
     const buttonInnerClasses = classNames(
@@ -23,7 +23,7 @@ function Button({ classes = '', title = 'Add title', align = 'right', loading = 
 
     return (
         <div style={{ textAlign: `${align}` }}>
-            <button className={className} >
+            <button disabled={loading} className={btnClassName} >
             <div className={buttonInnerClasses} >
                 <div>{ title }</div>
                 <div className={loaderClasses} > <Loader type='bar' backgroundColor='transparent' size='20px' /> </div>
